@@ -1,0 +1,43 @@
+<body>
+<h1>Welcome to Meteor!</h1>
+{{> layout}}
+</body>
+
+
+<template name="layout">
+
+    <div class="navbar-fixed">
+
+        <nav role="navigation">
+            <div class="container">
+                <div class="nav-wrapper"><a id="logo-container" href="{{pathFor 'products'}}" class="brand-logo">
+                    7place.com</a>
+                    <ul id="nav-screen" class="right">
+                        {{>menu}}
+                    </ul>
+
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                    <ul id="nav-mobile" class="side-nav">
+                        {{>menu}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container-body">
+    {{> yield}}
+</div>
+
+</template>
+
+<template name="menu">
+    <li>
+        <a href="{{pathFor 'signin'}}"><span class="fa fa-user fa-lg">  Ingresar</span></a>
+    </li>
+    <li>
+        <a href="{{pathFor 'signup'}}"><span class="fa fa-user-plus fa-lg"> Registrar</span></a>
+    </li>
+    <li>
+        <a href="sass.html"><span class="fa fa-shopping-cart fa-lg"> Compras</span></a>
+    </li>
+</template>
