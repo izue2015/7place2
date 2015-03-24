@@ -1,4 +1,3 @@
-/*
 Template.layout.rendered = function () {
     $(".button-collapse").sideNav();
 };
@@ -9,4 +8,4 @@ Template.layout.events({
         $('.button-collapse').sideNav('hide');
 
 }
-});*/
+});
