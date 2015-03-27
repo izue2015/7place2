@@ -54,14 +54,19 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   cursor:pointer;
 }
 #grid-selector{
-  box-sizing: content-box;
+  position: absolute;
   height: 10px;
-  padding: 40px 0 40px 30px;
+  left: 340px;
+  padding: 40px 40px 40px 30px;
+  float: right;
   color: #5d5f68;
   font-size: 14px;
 }
 #grid-menu{
   float:right;
+  height: 10px;
+  padding: 40px 40px 40px 30px;
+  font-size: 14px;
   width:105px;
 }
 #grid-menu ul{
@@ -69,6 +74,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   float: right;
   position: relative;
   top: -1px;}
+
 #grid-menu li{
   float:right;
   width:25px;
@@ -164,9 +170,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   -o-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
 }
-.checklist a:hover span{
-  border-color:#a6aab3;
-}
+
 .sizes a:hover span, .categories a:hover span{
   border-color:#a6aab3;
   -webkit-transition: all 300ms ease-out;
@@ -175,50 +179,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   -o-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
 }
-.checklist a span span{border:none;margin:0;float:none; position:absolute;top:0;left:0;}
-.checklist a .x{
-  display:block;
-  width:0;
-  height:2px;
-  background:#5ff7d2;
-  top:6px;
-  left:2px;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  -webkit-transition: all 50ms ease-out;
-}
-.checklist a .x.animate{
-  width:4px;
-  -webkit-transition: all 100ms ease-in;
-  -moz-transition: all 100ms ease-in;
-  -ms-transition: all 100ms ease-in;
-  -o-transition: all 100ms ease-in;
-  transition: all 100ms ease-in;
-}
-.checklist a .y{
-  display:block;
-  width:0px;
-  height:2px;
-  background:#5ff7d2;
-  top:4px;
-  left:3px;
-  -ms-transform: rotate(13deg);
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -webkit-transition: all 50ms ease-out;
-}
-.checklist a .y.animate{
-  width:8px;
-  -webkit-transition: all 100ms ease-out;
-  -moz-transition: all 100ms ease-out;
-  -ms-transition: all 100ms ease-out;
-  -o-transition: all 100ms ease-out;
-  transition: all 100ms ease-out;
-}
-.checklist .checked span{
-  border-color:#8d939f;
-}
+
 .colors ul, .sizes ul{
   float:left; width:130px;
 }
@@ -351,7 +312,7 @@ div.large .make3D{
   position:absolute;
   top:400px;
   left:0;
-  width: 252px;
+  width: 315px;
   height: 300px;
   padding: 24px 40px 35px 32px;
   -webkit-transition: all 200ms ease-out;
@@ -360,7 +321,7 @@ div.large .make3D{
   transition: all 200ms ease-out;
 }
 .make3D.animate .stats-container{
-  top:400px;
+  top:265px;
   -webkit-transition: all 200ms ease-out;
   -moz-transition: all 200ms ease-out;
   -o-transition: all 200ms ease-out;
@@ -378,7 +339,7 @@ div.large .make3D{
 }
 .stats-container .product_price{
   float:right;
-  color:#5ff7d2;
+  color:#42a5f5;
   font-size:22px;
   font-weight:600;
 }
@@ -388,7 +349,7 @@ div.large .make3D{
   left:0;
   width:100%;
   height:100%;
-  background:#5ff7d2;
+  background:#2196f3;
   opacity:0;
 }
 .make3D.animate .image_overlay{
@@ -413,27 +374,33 @@ div.large .make3D{
   margin-bottom:8px;
 }
 .add_to_cart{
-  position:absolute;
-  top:80px;
-  left:50%;
-  width:152px;
-  font-size:15px;
-  margin-left:-78px;
-  border:2px solid #fff;
-  color:#fff;
+  //position:absolute;
+  //top:80px;
+  //left:50%;
+  width:120px;
+  //right: 0px;
+  font-size:12px;
+  float: right;
+  //margin-left:-78px;
+  //border:2px solid #0d47a1;
+  background-color: #1976d2;
+  color: #ffffff;
   text-align:center;
   text-transform:uppercase;
   font-weight:700;
-  padding:10px 0;
-  opacity:0;
+  padding:8px 0;
+  opacity:1;
   -webkit-transition: all 200ms ease-out;
   -moz-transition: all 200ms ease-out;
   -o-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
+
+.text_add{
+  float: left;
+}
+
 .add_to_cart:hover{
-  background:#fff;
-  color:#5ff7d2;
   cursor:pointer;
 
 }
@@ -997,4 +964,42 @@ div.sku strong{
 
 .product.large:hover {
   box-shadow: 0px 5px 31px -1px rgba(0, 0, 0, 0.15);
+}
+
+//spinner
+.spinner {
+  float: left;
+  width: 123px;
+}
+.spinner input {
+  text-align: right;
+}
+.input-group-btn-vertical {
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+  display: table-cell;
+}
+.input-group-btn-vertical > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+.input-group-btn-vertical > .btn:first-child {
+  border-top-right-radius: 4px;
+}
+.input-group-btn-vertical > .btn:last-child {
+  margin-top: -2px;
+  border-bottom-right-radius: 4px;
+}
+.input-group-btn-vertical i{
+  position: absolute;
+  top: 0;
+  left: 4px;
 }

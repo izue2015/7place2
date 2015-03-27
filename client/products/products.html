@@ -11,15 +11,15 @@
 </template>
 
 <template name="head_products">
-    <div id="grid-selector">
-        <div id="grid-menu">
-            View:
-            <ul>
-                <li class="largeGrid"><a href=""></a></li>
-                <li class="smallGrid"><a class="active" href=""></a></li>
-            </ul>
-        </div>
+    <div id="grid-menu">
+        View:
+        <ul>
+            <li class="largeGrid"><a href=""></a></li>
+            <li class="smallGrid"><a class="active" href=""></a></li>
+        </ul>
+    </div>
 
+    <div id="grid-selector">
         Showing 1–9 of 48 results
     </div>
 </template>
@@ -52,11 +52,11 @@
                 <span>S</span>
                 <span>M</span>
                 <span>L</span>
-                <span>XL</span>
+                <span>XL</span>me
                 <span>XXL</span>
             </div>
 
-            <button class="add-cart-large">Add To Cart</button>
+            <button class="add-cart-large">Agregar</button>
 
         </div>
         <div class="make3D">
@@ -64,25 +64,26 @@
                 <div class="shadow"></div>
                 <img src="{{value.image}}" alt="" />
                 <div class="image_overlay"></div>
-                <div class="add_to_cart">Agregar</div>
-                <div class="view_gallery">View gallery</div>
+                <div class="view_gallery">Ver Fotos</div>
+
                 <div class="stats">
                     <div class="stats-container">
                         <span class="product_price">{{currency value.price}}</span>
                         <span class="product_name">{{value.name}}</span>
                         <p>{{value.description}}</p>
 
-                        <div class="product-options">
-                            <strong>SIZES</strong>
-                            <span>XS, S, M, L, XL, XXL</span>
-                            <strong>COLORS</strong>
-                            <div class="colors">
-                                <div class="c-blue"><span></span></div>
-                                <div class="c-red"><span></span></div>
-                                <div class="c-white"><span></span></div>
-                                <div class="c-green"><span></span></div>
+
+                        <div id="{{index}}" class="input-group spinner">
+                            <input id="{{index}}" type="text" class="form-control" value="0">
+                            <div class="input-group-btn-vertical">
+                                <button  id="{{index}}" class="btn btn-up btn-default"><i class="fa fa-caret-up"></i></button>
+                                <button  id="{{index}}" class="btn btn-down btn-default"><i class="fa fa-caret-down"></i></button>
                             </div>
-                        </div>
+                            </div>
+
+                        <div class="add_to_cart">Agregar</div>
+
+
                     </div>
                 </div>
             </div>

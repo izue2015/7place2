@@ -37,6 +37,7 @@ minifiers@1.1.4
 minimongo@1.0.7
 mobile-status-bar@1.0.3
 mongo@1.1.0
+natestrauser:font-awesome@4.3.0
 observe-sequence@1.0.5
 ordered-dict@1.0.3
 random@1.0.3
@@ -50,6 +51,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.5
 templating@1.1.0
 tracker@1.0.6
+twbs:bootstrap@3.3.4
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4

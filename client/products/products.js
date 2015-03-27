@@ -105,6 +105,33 @@ if (Meteor.isClient) {
     });
     Template.products.rendered = function () {
 
+
+                $('.spinner .btn:first-of-type').on('click', function() {
+                    var id = $(this).parent().parent().find('input').get(0).id;
+                    $('#' + id+' input').val( parseInt($('#' + id+' input').val(), 10) + 1);
+                });
+                $('.spinner .btn:last-of-type').on('click', function() {
+                    var id = $(this).parent().parent().find('input').get(0).id;
+                    var value=parseInt($('#' + id+' input').val(), 10);
+                    if(value>0) {
+                        $('#' + id+' input').val( value - 1);
+                    }
+
+                });
+
+
+/*        'click .spinner .btn:first-of-type': function(e, template) {
+
+            $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+        },
+        'click .spinner .btn:last-of-type': function(e, template) {
+            var i=parseInt($('.spinner input').val(), 10) - 1;
+            if(i>=0){
+                $('.spinner input').val(i);
+            }
+
+        },*/
+
         $('.product').each(function (i, el) {
 
             // Lift card and show stats on Mouseover
@@ -308,7 +335,8 @@ if (Meteor.isClient) {
         });
 
         $('.add_to_cart').click(function () {
-            var productCard = $(this).parent();
+
+            var productCard = $(this).parent().parent().parent();
             var position = productCard.offset();
             console.log(position);
 
