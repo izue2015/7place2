@@ -1,0 +1,204 @@
+/*** Global ***/
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+$max-height-img: 320px;
+// #Reset & Basics (Inspired by E. Meyers)
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+body{
+  line-height: 1;
+}
+
+.main{
+  background-color: #1976d2;
+  width: 100%;
+  //height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-main{
+  //height: $height_product;
+  //padding: 20px 0
+/*  background: white;
+  padding: 10px 10px 6px 10px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);*/
+}
+
+
+.content-product{
+  width: 100%;
+  background-color: white;
+  & .stats-container{
+    display: none;
+  }
+
+  &>img{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+section article:nth-of-type(1){
+  background-color: beige;
+}
+
+section article:nth-of-type(2){
+  background-color: aqua;
+}
+
+section article:nth-of-type(3){
+  background-color: blueviolet;
+}
+
+section article:nth-of-type(4){
+  background-color: #ff1811;
+}
+section article:nth-of-type(5){
+  background-color: #3de224;
+}
+section article:nth-of-type(8){
+  background-color: #0004fc;
+  flex-shrink: 1;
+}
+
+.description-product{
+  padding: 15px 20px 15px 20px;
+}
+.description-product .price{
+  float:right;
+}
+.description-product .product_price{
+   color:#5ff7d2;
+   font-size:22px;
+   font-weight:600;
+}
+.description-product .normal_price{
+  color: #d0d0d0;
+  font-size:22px;
+  font-weight:600;
+  text-decoration: line-through;
+}
+
+.description-product .product_name{
+  font-size: 15px;
+  color: #393c45;
+  font-weight: 700;
+}
+.description-product p{
+  font-size:15px;
+  color:#b1b1b3;
+  padding:2px 0 10px 0;
+}
+
+
+//Medianas a grandes 600px a más
+@media #{$medium-and-up} {
+  .content-product .stats-container{
+    //z-index: 20;
+    display: inline;
+    width: $max-height-img;
+    height: 400px;
+    background:#fff;
+    position:absolute;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -400px;
+    opacity:0;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+  }
+
+  .main{
+    background-color: #1976d2;
+    min-width: 700px;
+    max-width: 1262px;
+    //width: $medium-screen;
+    //height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: space-between;
+
+  }
+
+  .product-item{
+    flex: 1 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: $max-height-img;
+
+
+    &:empty {
+      height: 0;
+
+    };
+
+    &>img{
+      z-index: 1;
+      display: block;
+      width: auto;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+
+    }
+
+
+    .content-product{
+      background-color: #fcfcfc;
+
+    }
+
+  }
+
+  .content-product{
+    width: $max-height-img;
+    background-color: aliceblue;
+    margin-right: auto;
+    margin-left: auto;
+
+    &.animate .stats-container{
+      //display: block;
+      opacity: 0.7;
+      -webkit-transition: all 500ms ease-out;
+      -moz-transition: all 500ms ease-out;
+      -o-transition: all 500ms ease-out;
+      transition: all 500ms ease-out;
+    }
+    &>img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+}
+

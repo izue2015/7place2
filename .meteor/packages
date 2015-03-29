@@ -10,6 +10,5 @@ insecure
 iron:router
 underscore
 fourseven:scss
-twbs:bootstrap
 jquery
 natestrauser:font-awesome
